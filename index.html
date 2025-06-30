@@ -1,104 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Beniam Ayele – Project Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beniam Ayele Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Beniam Ayele</h1>
-    <nav>
-      <ul>
-        <li><a href="#current-projects">Current Projects</a></li>
-        <li><a href="#school-projects">School Projects</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section id="current-projects">
-      <h2>Current Projects</h2>
+    <header>
+        <h1>Beniam Ayele Portfolio</h1>
+        <nav>
+            <button onclick="showTab('current')">Current Projects</button>
+            <button onclick="showTab('school')">School Projects</button>
+            <label class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
+        </nav>
+    </header>
 
-      <section id="project1" class="project">
-        <h3>Project 1: BACnet/IP on ESP32</h3>
-        <p>A lightweight BACnet/IP protocol stack implementation using ESP32, supporting Wi-Fi networking, UDP socket handling, Who-Is/I-Am discovery, and basic Read Property service parsing.</p>
-        <ul>
-          <li><strong>Tools:</strong> ESP-IDF, FreeRTOS, Wireshark, UDP</li>
-          <li><strong>Features:</strong> Debug logging, APDU parsing, unicast/broadcast support</li>
-        </ul>
-        <div class="gallery">
-          <img src="images/IMG-1521.jpg" alt="Code in VSCode">
-          <img src="images/IMG-1527.JPG" alt="BACnet Logs">
-          <img src="images/IMG-1529.JPG" alt="Wireshark Log">
-          <img src="images/IMG-1534.JPG" alt="BACnet Explorer YABE">
-          <img src="images/IMG-153.JPG" alt="ESP32 Prototype">
-        </div>
-      </section>
+    <main>
+        <section id="current" class="tab">
+            <h2>Current Projects</h2>
 
-      <section id="project2" class="project">
-        <h3>Project 2: CutCam – Wireless Hair Clipper Camera</h3>
-        <p>CutCam solves the challenge of grooming the back of your head by attaching a Wi-Fi-enabled camera to standard hair clippers, streaming live video to smart devices. Designed for DIY grooming convenience.</p>
-        <ul>
-          <li><strong>Tools:</strong> Fusion 360, ESP32, 3D printing</li>
-          <li><strong>Features:</strong> Universal fit, live video streaming, easy installation</li>
-        </ul>
-        <video controls>
-          <source src="videos/CAMCUTBOTOMWITHRACKASSM_V2_01 v28.avi" type="video/avi">
-          Your browser does not support the video tag.
-        </video>
-        <div class="gallery">
-          <img src="images/cutcamexplod.jpg" alt="Exploded View">
-          <img src="images/cutcam1.jpg" alt="Real Setup">
-          <img src="images/cutcammain.jpg" alt="Assembled View">
-        </div>
-      </section>
+            <div class="project-card">
+                <h3>BACnet/IP on ESP32</h3>
+                <p>Lightweight BACnet/IP stack implemented in C using ESP-IDF. Handles Who-Is, I-Am, Read Property. Tested with Wireshark.</p>
+                <div class="gallery">
+                    <img src="assets/images/IMG-1521.jpg" alt="Code View">
+                    <img src="assets/images/IMG-1529.JPG" alt="Wireshark">
+                    <img src="assets/images/IMG-153.JPG" alt="Terminal Output">
+                </div>
+            </div>
 
-      <section id="project3" class="project">
-        <h3>Project 3: BMW Logo CNC Carving</h3>
-        <p>A CNC-machined BMW logo created from wood and filled with epoxy, designed in Fusion 360 and toolpathed for 3-axis milling. This project was for personal crafting use.</p>
-        <ul>
-          <li><strong>Tools:</strong> Fusion 360 CAM, CNC router</li>
-          <li><strong>Features:</strong> 2D contour, adaptive, and pocket toolpaths</li>
-        </ul>
-        <div class="gallery">
-          <img src="images/bmwlogo.jpg" alt="BMW Logo CAM">
-        </div>
-      </section>
+            <div class="project-card">
+                <h3>CutCam</h3>
+                <p>A wireless camera that attaches to any hair clipper and streams video to smart devices. Solves the problem of self-grooming visibility.</p>
+                <ul>
+                    <li>Attachable to any clipper</li>
+                    <li>3D printable design</li>
+                    <li>Smartphone streaming</li>
+                </ul>
+                <p><em>3D models and video coming soon.</em></p>
+            </div>
+        </section>
 
-      <section id="project4" class="project">
-        <h3>Project 4: HVAC Upgrade – Medhanealem Orthodox Church</h3>
-        <p>Consulting work and load calculations for the HVAC replacement project at Mekane Selam Medhanealem Cathedral in Oakland, CA. Used Trace 3D Plus for full cooling and heating load analysis and system design verification.</p>
-        <ul>
-          <li><strong>Tools:</strong> Trace 3D Plus, AutoCAD, HVAC design principles</li>
-          <li><strong>Highlights:</strong> RTU sizing, exhaust recommendations, duct layout consultation</li>
-        </ul>
-        <div class="gallery">
-          <img src="images/pg1-1.jpg" alt="Church Plan 1">
-          <img src="images/pg2-1.jpg" alt="Church Plan 2">
-          <img src="images/pg3-1.jpg" alt="Church Plan 3">
-          <img src="images/pg4-1.jpg" alt="Church Plan 4">
-          <img src="images/pg5-1.jpg" alt="Church Plan 5">
-          <img src="images/pg6-1.jpg" alt="Church Plan 6">
-          <img src="images/pg7-1.jpg" alt="Church Plan 7">
-          <img src="images/pg8-1.jpg" alt="Church Plan 8">
-          <img src="images/page9.jpg" alt="Church Load Summary">
-        </div>
-      </section>
-    </section>
+        <section id="school" class="tab" style="display:none;">
+            <h2>School Projects</h2>
+            <ul>
+                <li><a href="assets/pdfs/Dynamics Final.pdf" target="_blank">Dynamics Final</a></li>
+                <li><a href="assets/pdfs/Structural Report.pdf" target="_blank">Structural Report</a></li>
+                <li><a href="assets/pdfs/HVAC Design Project.pdf" target="_blank">HVAC Design Project</a></li>
+            </ul>
+            <h3>All PDFs</h3>
+            <ul>
+                <li><a href="assets/pdfs/Dynamics Final.pdf" target="_blank">Dynamics Final.pdf</a></li><li><a href="assets/pdfs/Structural Report.pdf" target="_blank">Structural Report.pdf</a></li><li><a href="assets/pdfs/HVAC Design Project.pdf" target="_blank">HVAC Design Project.pdf</a></li>
+            </ul>
+        </section>
+    </main>
 
-    <section id="school-projects">
-      <h2>School Projects</h2>
-      <ul>
-        <li><strong>Programmable CCCV EV Battery Cycler:</strong> Built a functional battery charger prototype with custom current control circuit and simulation tools. <a href="docs/Programmable CCCV EV Battery Cycler .pdf">Report (PDF)</a></li>
-        <li><strong>HVAC Load Analysis – SJSU:</strong> Performed thermal calculations and sizing for HVAC systems using building parameters. <a href="docs/ME 183 HVAC Project Report.pdf">Report (PDF)</a></li>
-        <li><strong>Smart Irrigation System:</strong> Final semester controls project that automates irrigation based on soil conditions. <a href="docs/FINAL REPORT (END OF SEMESTER).pdf">Report (PDF)</a></li>
-        <li><strong>ME106 Mechatronics – Squirrel Repellent System:</strong> Arduino-driven detection and scare system using PIR and light sensors. <a href="docs/ME106 Project Report.pdf">Report (PDF)</a></li>
-      </ul>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2025 Beniam Ayele | Portfolio</p>
-  </footer>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        themeToggle.addEventListener('change', () => {
+            html.classList.toggle('dark-theme');
+        });
+
+        function showTab(tabName) {
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.style.display = tab.id === tabName ? 'block' : 'none';
+            });
+        }
+    </script>
 </body>
 </html>
