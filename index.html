@@ -11,58 +11,97 @@
     <h1>Beniam Ayele</h1>
     <nav>
       <ul>
-        <li><a href="#current-projects">Current Projects</a></li>
+        <li><a href="#project1">BACnet/IP</a></li>
+        <li><a href="#project2">CutCam</a></li>
+        <li><a href="#project3">BMW CNC</a></li>
+        <li><a href="#project4">Medhanealem HVAC</a></li>
         <li><a href="#school-projects">School Projects</a></li>
         <li><a href="#resume">Resume</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <section id="current-projects">
-      <h2>Current Projects</h2>
-      <!-- Current projects content remains unchanged -->
+    <section id="project1" class="project">
+      <h2>Project 1: BACnet/IP on ESP32</h2>
+      <p>A lightweight BACnet/IP protocol stack implementation using ESP32, supporting Wi-Fi networking, UDP socket handling, Who-Is/I-Am discovery, and basic Read Property service parsing.</p>
+      <ul>
+        <li><strong>Tools:</strong> ESP-IDF, FreeRTOS, Wireshark, UDP</li>
+        <li><strong>Features:</strong> Debug logging, APDU parsing, unicast/broadcast support</li>
+      </ul>
+      <div class="gallery">
+        <img src="images/IMG-1521.jpg" alt="Code in VSCode">
+        <img src="images/IMG-1527.JPG" alt="BACnet Logs">
+        <img src="images/IMG-1529.JPG" alt="Wireshark Log">
+        <img src="images/IMG-1534.JPG" alt="BACnet Explorer YABE">
+        <img src="images/IMG-153.JPG" alt="ESP32 Prototype">
+      </div>
+    </section>
+
+    <section id="project2" class="project">
+      <h2>Project 2: CutCam – Wireless Hair Clipper Camera</h2>
+      <p>CutCam solves the challenge of grooming the back of your head by attaching a Wi-Fi-enabled camera to standard hair clippers, streaming live video to smart devices. Designed for DIY grooming convenience.</p>
+      <ul>
+        <li><strong>Tools:</strong> Fusion 360, ESP32, 3D printing</li>
+        <li><strong>Features:</strong> Universal fit, live video streaming, easy installation</li>
+      </ul>
+      <video controls>
+        <source src="videos/CAMCUTBOTOMWITHRACKASSM_V2_01 v28.avi" type="video/avi">
+        Your browser does not support the video tag.
+      </video>
+      <div class="gallery">
+        <img src="images/cutcamexplod.jpg" alt="Exploded View">
+        <img src="images/cutcam1.jpg" alt="Real Setup">
+        <img src="images/cutcammain.jpg" alt="Assembled View">
+      </div>
+    </section>
+
+    <section id="project3" class="project">
+      <h2>Project 3: BMW Logo CNC Carving</h2>
+      <p>A CNC-machined BMW logo created from wood and filled with epoxy, designed in Fusion 360 and toolpathed for 3-axis milling. This project was for personal crafting use.</p>
+      <ul>
+        <li><strong>Tools:</strong> Fusion 360 CAM, CNC router</li>
+        <li><strong>Features:</strong> 2D contour, adaptive, and pocket toolpaths</li>
+      </ul>
+      <div class="gallery">
+        <img src="images/bmwlogo.jpg" alt="BMW Logo CAM">
+      </div>
+    </section>
+
+    <section id="project4" class="project">
+      <h2>Project 4: HVAC Upgrade – Medhanealem Orthodox Church</h2>
+      <p>Consulting work and load calculations for the HVAC replacement project at Mekane Selam Medhanealem Cathedral in Oakland, CA. Used Trace 3D Plus for full cooling and heating load analysis and system design verification.</p>
+      <ul>
+        <li><strong>Tools:</strong> Trace 3D Plus, AutoCAD, HVAC design principles</li>
+        <li><strong>Highlights:</strong> RTU sizing, exhaust recommendations, duct layout consultation</li>
+      </ul>
+      <div class="gallery">
+        <img src="images/pg1-1.jpg" alt="Church Plan 1">
+        <img src="images/pg2-1.jpg" alt="Church Plan 2">
+        <img src="images/pg3-1.jpg" alt="Church Plan 3">
+        <img src="images/pg4-1.jpg" alt="Church Plan 4">
+        <img src="images/pg5-1.jpg" alt="Church Plan 5">
+        <img src="images/pg6-1.jpg" alt="Church Plan 6">
+        <img src="images/pg7-1.jpg" alt="Church Plan 7">
+        <img src="images/pg8-1.jpg" alt="Church Plan 8">
+        <img src="images/page9.jpg" alt="Church Load Summary">
+      </div>
     </section>
 
     <section id="school-projects">
       <h2>School Projects</h2>
       <ul>
-        <li>
-          <strong>Programmable CCCV EV Battery Cycler:</strong>
-          A senior project to develop a low-cost programmable lithium battery charger for EVs, featuring a CCCV circuit (EasyEDA), MATLAB Simulink control model, Arduino code, and Python-based SoC/SoH analysis.
-          <a href="docs/Programmable CCCV EV Battery Cycler .pdf">View Report (PDF)</a>
-        </li>
-        <li>
-          <strong>HVAC Design for Office Building (ME 183):</strong>
-          Designed an HVAC system using Trace 700 with zoning, space/thermal load analysis, and ASHRAE compliance. Submitted as part of ME 183 coursework.
-          <a href="docs/ME 183 HVAC Project Report.pdf">View Report (PDF)</a>
-        </li>
-        <li>
-          <strong>Squirrel Repellent System (ME106):</strong>
-          Mechatronics project that used PIR sensors, servos, and light-based logic to deter animals using Arduino and 3D-printed parts.
-          <a href="docs/ME106 Project Report.pdf">View Report (PDF)</a>
-        </li>
-        <li>
-          <strong>Solar-Assisted Vertical Axis Wind Turbine (SAVAWT):</strong>
-          Designed a hybrid renewable generator integrating solar and wind, monitored with Arduino and power tracking sensors.
-          <a href="docs/Solar Assisted Vertical Wind Turbine (SAVAWT).pdf">View Report (PDF)</a>
-        </li>
-        <li>
-          <strong>Vertical Self-Balancing Pendulum:</strong>
-          Modeled and controlled an inverted pendulum using feedback control with Simulink and Arduino, showcasing advanced dynamics.
-          <a href="docs/Vertical Self Balancing Pendulem.pdf">View Report (PDF)</a>
-        </li>
-        <li>
-          <strong>Mechanical HVAC Progress Memo:</strong>
-          Progress milestone memo outlining zoning, design assumptions, and envelope inputs for a mechanical HVAC design course.
-          <a href="docs/Mechanical HVAC Plan.pdf">View Report (PDF)</a>
-        </li>
+        <li><strong>Programmable CCCV EV Battery Cycler:</strong> A senior project to develop a low-cost programmable lithium battery charger for EVs, featuring a CCCV circuit (EasyEDA), MATLAB Simulink control model, Arduino code, and Python-based SoC/SoH analysis. <a href="docs/Programmable CCCV EV Battery Cycler .pdf">View Report (PDF)</a></li>
+        <li><strong>HVAC Design for Office Building (ME 183):</strong> Designed an HVAC system using Trace 700 with zoning, space/thermal load analysis, and ASHRAE compliance. Submitted as part of ME 183 coursework. <a href="docs/ME 183 HVAC Project Report.pdf">View Report (PDF)</a></li>
+        <li><strong>Squirrel Repellent System (ME106):</strong> Mechatronics project that used PIR sensors, servos, and light-based logic to deter animals using Arduino and 3D-printed parts. <a href="docs/ME106 Project Report.pdf">View Report (PDF)</a></li>
+        <li><strong>Solar-Assisted Vertical Axis Wind Turbine (SAVAWT):</strong> Designed a hybrid renewable generator integrating solar and wind, monitored with Arduino and power tracking sensors. <a href="docs/Solar Assisted Vertical Wind Turbine (SAVAWT).pdf">View Report (PDF)</a></li>
+        <li><strong>Vertical Self-Balancing Pendulum:</strong> Modeled and controlled an inverted pendulum using feedback control with Simulink and Arduino, showcasing advanced dynamics. <a href="docs/Vertical Self Balancing Pendulem.pdf">View Report (PDF)</a></li>
+        <li><strong>Mechanical HVAC Progress Memo:</strong> Progress milestone memo outlining zoning, design assumptions, and envelope inputs for a mechanical HVAC design course. <a href="docs/Mechanical HVAC Plan.pdf">View Report (PDF)</a></li>
       </ul>
     </section>
 
     <section id="resume">
       <h2>Resume</h2>
-      <p>Below is a PDF viewer of my most current resume.</p>
-      <iframe src="docs/Beniam_Ayele_ Resume062925.pdf" width="100%" height="800px" style="border: 1px solid #444; border-radius: 6px;"></iframe>
+      <a href="docs/Beniam_Ayele_ Resume062925.pdf" target="_blank">View Resume (PDF)</a>
     </section>
   </main>
   <footer>
