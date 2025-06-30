@@ -1,111 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Beniam Ayele – Project Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beniam Ayele Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Beniam Ayele</h1>
-    <nav>
-      <ul>
-        <li><a href="#project1">BACnet/IP</a></li>
-        <li><a href="#project2">CutCam</a></li>
-        <li><a href="#project3">BMW CNC</a></li>
-        <li><a href="#project4">Medhanealem HVAC</a></li>
-        <li><a href="#school-projects">School Projects</a></li>
-        <li><a href="#resume">Resume</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section id="project1" class="project">
-      <h2>Project 1: BACnet/IP on ESP32</h2>
-      <p>A lightweight BACnet/IP protocol stack implementation using ESP32, supporting Wi-Fi networking, UDP socket handling, Who-Is/I-Am discovery, and basic Read Property service parsing.</p>
-      <ul>
-        <li><strong>Tools:</strong> ESP-IDF, FreeRTOS, Wireshark, UDP</li>
-        <li><strong>Features:</strong> Debug logging, APDU parsing, unicast/broadcast support</li>
-      </ul>
-      <div class="gallery">
-        <img src="images/IMG-1521.jpg" alt="Code in VSCode">
-        <img src="images/IMG-1527.JPG" alt="BACnet Logs">
-        <img src="images/IMG-1529.JPG" alt="Wireshark Log">
-        <img src="images/IMG-1534.JPG" alt="BACnet Explorer YABE">
-        <img src="images/IMG-153.JPG" alt="ESP32 Prototype">
-      </div>
-    </section>
+    <header>
+        <h1>Beniam Ayele Portfolio</h1>
+        <nav>
+            <button onclick="showTab('Resume')">Resume</button>
+            <button onclick="showTab('current')">Current Projects</button>
+            <button onclick="showTab('school')">School Projects</button>
+            <label class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
+        </nav>
+    </header>
 
-    <section id="project2" class="project">
-      <h2>Project 2: CutCam – Wireless Hair Clipper Camera</h2>
-      <p>CutCam solves the challenge of grooming the back of your head by attaching a Wi-Fi-enabled camera to standard hair clippers, streaming live video to smart devices. Designed for DIY grooming convenience.</p>
-      <ul>
-        <li><strong>Tools:</strong> Fusion 360, ESP32, 3D printing</li>
-        <li><strong>Features:</strong> Universal fit, live video streaming, easy installation</li>
-      </ul>
-      <video controls>
-        <source src="videos/CAMCUTBOTOMWITHRACKASSM_V2_01 v28.avi" type="video/avi">
-        Your browser does not support the video tag.
-      </video>
-      <div class="gallery">
-        <img src="images/cutcamexplod.jpg" alt="Exploded View">
-        <img src="images/cutcam1.jpg" alt="Real Setup">
-        <img src="images/cutcammain.jpg" alt="Assembled View">
-      </div>
-    </section>
+    <main>
+        <section id="Resume" class="tab">
+            <h2>Resume</h2>
+            <p>Welcome to my portfolio! Here you can find my most uptodate resume and details about my current and school projects.</p>
+            <p>My resume is a comprehensive document that outlines my skills, experiences, and projects
+      <p>Below is a PDF viewer of my most current resume.</p>
+      <iframe src="assets/pdfs/Beniam_Ayele_ Resume062925.pdf" width="100%" height="800px" style="border: 1px solid #444; border-radius: 6px;"></iframe>
+            <p>Feel free to download it for a detailed overview of my qualifications.</p>
+            <p>For more information about my projects, please navigate to the tabs above.</p>
+            <p>Thank you for visiting my portfolio!</p>
+        </section>
+        <section id="current" class="tab">
+            <h2>Current Projects</h2>
 
-    <section id="project3" class="project">
-      <h2>Project 3: BMW Logo CNC Carving</h2>
-      <p>A CNC-machined BMW logo created from wood and filled with epoxy, designed in Fusion 360 and toolpathed for 3-axis milling. This project was for personal crafting use.</p>
-      <ul>
-        <li><strong>Tools:</strong> Fusion 360 CAM, CNC router</li>
-        <li><strong>Features:</strong> 2D contour, adaptive, and pocket toolpaths</li>
-      </ul>
-      <div class="gallery">
-        <img src="images/bmwlogo.jpg" alt="BMW Logo CAM">
-      </div>
-    </section>
+            <div class="project-card">
+                <h3>BACnet/IP on ESP32</h3>
+                <h4>Project Current Status: In Development</h4>
+                <p>This project implements a lightweight BACnet/IP protocol stack on an ESP32 microcontroller using the ESP-IDF framework and FreeRTOS. It enables the ESP32 to function as a standalone BACnet/IP device, capable of participating in building automation networks over Wi-Fi.</p>
+                <h5>Key Features:</h5>
+                <li>Wi-Fi STA mode support with automatic reconnection and event handling UDP socket server listening on BACnet/IP default port 47808 </li>
+                <li>Full BACnet/IP BVLC and NPDU handling</li>
+                <li>Parses and responds to:</li>
+                <ul>
+                    <li>Who-Is → responds with I-Am</li>
+                    <li>Read Property → returns standardized error for unimplemented properties</li>
+                </ul>
+                <li>Sends and parses BACnet APDU messages, both broadcast and unicast</li>
+                <li>Wireshark-compatible packet formatting for debugging and verification</li>
+                <li>Implements custom I-Am packet construction with:</li>
+                <ul>
+                    <li>Object identifier</li>
+                    <li>Max APDU size</li>
+                    <li>Segmentation info</li>
+                    <li>Vendor ID</li>
+                </ul>
+                <h5> Technologies Used:</h5>
+                <li>ESP-IDF v5.0</li>
+                <li>FreeRTOS</li>
+                <li>LWIP (Lightweight IP stack)</li>
+                <li>Socket programming (UDP)</li>
+                <li>Custom BACnet protocol parsing</li>
+                <li>Wireshark log output via ESP_LOG_BUFFER_HEX</li>
+                <h4>Desierd ProjectOutcomes:</h4>
+                <ul>
+                    <li>Complete implementation of BACnet/IP protocol stack on ESP32</li>
+                    <li>Full support for BACnet/IP device discovery and communication</li>
+                    <li>Ability to handle multiple BACnet/IP requests concurrently</li>
+                    <li>Integration with building automation systems for real-time monitoring and control</li>
+                    <li>Create the building block for BACnet network discovery, communication, and BACnet devices</li>
+                </ul>
+                <p> here are screenshots from BACnet/IP on ESP32 project:</p>   
+                <div class="gallery">
+                    <img src="assets/images/IMG-1521.jpg" alt="Code View">
+                    <img src="assets/images/IMG-1529.JPG" alt="Wireshark">
+                    <img src="assets/images/IMG-153.JPG" alt="Terminal Output">
+                </div>
+            </div>
 
-    <section id="project4" class="project">
-      <h2>Project 4: HVAC Upgrade – Medhanealem Orthodox Church</h2>
-      <p>Consulting work and load calculations for the HVAC replacement project at Mekane Selam Medhanealem Cathedral in Oakland, CA. Used Trace 3D Plus for full cooling and heating load analysis and system design verification.</p>
-      <ul>
-        <li><strong>Tools:</strong> Trace 3D Plus, AutoCAD, HVAC design principles</li>
-        <li><strong>Highlights:</strong> RTU sizing, exhaust recommendations, duct layout consultation</li>
-      </ul>
-      <div class="gallery">
-        <img src="images/pg1-1.jpg" alt="Church Plan 1">
-        <img src="images/pg2-1.jpg" alt="Church Plan 2">
-        <img src="images/pg3-1.jpg" alt="Church Plan 3">
-        <img src="images/pg4-1.jpg" alt="Church Plan 4">
-        <img src="images/pg5-1.jpg" alt="Church Plan 5">
-        <img src="images/pg6-1.jpg" alt="Church Plan 6">
-        <img src="images/pg7-1.jpg" alt="Church Plan 7">
-        <img src="images/pg8-1.jpg" alt="Church Plan 8">
-        <img src="images/page9.jpg" alt="Church Load Summary">
-      </div>
-    </section>
+            <div class="project-card">
+                <h3>CutCam</h3>
+                <p>A wireless camera that attaches to any hair clipper and streams video to smart devices. Solves the problem of self-grooming visibility.</p>
+                <ul>
+                    <li>Attachable to any clipper</li>
+                    <li>3D printable design</li>
+                    <li>Smartphone streaming</li>
+                </ul>
+                <h4>Project Current Status: In Development</h4>
+                <li>Battery charging circuit and test complited.</li>
+                <li>3D model and 3D-printed parts complited.</li>
+                <li>waiting on serial communication chip to program the ESP-32</li> 
+                <p><em>here are the screenshots of 3D models and 3D-printed parts.</em></p>
+                <div class="gallery">
+                    <img src="assets/images/IMG-1521.jpg" alt="Code View">
+                    <img src="assets/images/IMG-1529.JPG" alt="Wireshark">
+                    <img src="assets/images/IMG-153.JPG" alt="Terminal Output">
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Consulting at Medhanealem Ethiopian Orthodox Church in Oakland, CA on HVAC upgrade Project</h3>
+                <h4>Project Overview and Tasks:</h4>
+                <p>As a consultant, I provided expertise on the HVAC upgrade project for Medhanealem Ethiopian Orthodox Church in Oakland, CA. The project involved evaluating the existing HVAC system and recommending improvements to enhance energy efficiency and comfort.</p>
+                <h5>Key Responsibilities:</h4>
+                <ul>
+                    <li>Conducted a comprehensive assessment of the current HVAC system</li>
+                    <li>Identified cost-effective solutions for system upgrades</li>
+                    <li>Performed load calculation and sized unit using TRACE 3D</li>
+                    <li>Collaborated with the church leadership to understand their needs and constraints</li>
+                    <li>Provided technical guidance on the implementation of the recommended upgrades</li>
+                </ul>
+                <p> here are screenshots from BACnet/IP on ESP32 project:</p>   
+                <div class="gallery">
+                    <img src="assets/images/pg1-1.jpg" alt="Code View">
+                    <img src="assets/images/pg1-2.jpg" alt="Wireshark">
+                    <img src="assets/images/pg2-1.jpg" alt="Terminal Output">
+                    <img src="assets/images/pg2-2.jpg" alt="Terminal Output">
+                    <img src="assets/images/pg3-1.jpg" alt="Terminal Output">
+                    <img src="assets/images/pg3-2.jpg" alt="Terminal Output">
+                    <img src="assets/images/pg4-1.jpg" alt="Terminal Output">
+                    <img src="assets/images/pg4-2.jpg" alt="Terminal Output">
+                    
+                </div>
+            </div>
+        </section>
 
-    <section id="school-projects">
-      <h2>School Projects</h2>
-      <ul>
-        <li><strong>Programmable CCCV EV Battery Cycler:</strong> A senior project to develop a low-cost programmable lithium battery charger for EVs, featuring a CCCV circuit (EasyEDA), MATLAB Simulink control model, Arduino code, and Python-based SoC/SoH analysis. <a href="docs/Programmable CCCV EV Battery Cycler .pdf">View Report (PDF)</a></li>
-        <li><strong>HVAC Design for Office Building (ME 183):</strong> Designed an HVAC system using Trace 700 with zoning, space/thermal load analysis, and ASHRAE compliance. Submitted as part of ME 183 coursework. <a href="docs/ME 183 HVAC Project Report.pdf">View Report (PDF)</a></li>
-        <li><strong>Squirrel Repellent System (ME106):</strong> Mechatronics project that used PIR sensors, servos, and light-based logic to deter animals using Arduino and 3D-printed parts. <a href="docs/ME106 Project Report.pdf">View Report (PDF)</a></li>
-        <li><strong>Solar-Assisted Vertical Axis Wind Turbine (SAVAWT):</strong> Designed a hybrid renewable generator integrating solar and wind, monitored with Arduino and power tracking sensors. <a href="docs/Solar Assisted Vertical Wind Turbine (SAVAWT).pdf">View Report (PDF)</a></li>
-        <li><strong>Vertical Self-Balancing Pendulum:</strong> Modeled and controlled an inverted pendulum using feedback control with Simulink and Arduino, showcasing advanced dynamics. <a href="docs/Vertical Self Balancing Pendulem.pdf">View Report (PDF)</a></li>
-        <li><strong>Mechanical HVAC Progress Memo:</strong> Progress milestone memo outlining zoning, design assumptions, and envelope inputs for a mechanical HVAC design course. <a href="docs/Mechanical HVAC Plan.pdf">View Report (PDF)</a></li>
-      </ul>
-    </section>
+        <section id="projects" class="tab">
+            <h2>Personal Projects</h2>
+            <div class="project-card">
+                <h3>CutCam</h3>
+                <p>A wireless camera that attaches to any hair clipper and streams video to smart devices. Solves the problem of self-grooming visibility.</p>
+                <ul>
+                    <li>Attachable to any clipper</li>
+                    <li>3D printable design</li>
+                    <li>Smartphone streaming</li>
+                </ul>
+                <h4>Project Current Status: In Development</h4>
+                <li>Battery charging circuit and test complited.</li>
+                <li>3D model and 3D-printed parts complited.</li>
+                <li>waiting on serial communication chip to program the ESP-32</li> 
+                <p><em>here are the screenshots of 3D models and 3D-printed parts.</em></p>
+                <div class="gallery">
+                    <img src="assets/images/IMG-1521.jpg" alt="Code View">
+                    <img src="assets/images/IMG-1529.JPG" alt="Wireshark">
+                    <img src="assets/images/IMG-153.JPG" alt="Terminal Output">
+                </div>
+            </div>
+        </section>
 
-    <section id="resume">
-      <h2>Resume</h2>
-      <a href="docs/Beniam_Ayele_ Resume062925.pdf" target="_blank">View Resume (PDF)</a>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2025 Beniam Ayele | Portfolio</p>
-  </footer>
+        <section id="school" class="tab" style="display:none;">
+            <h2>School Projects</h2>
+            <ul>
+                <h3>Programmable CCCV EV Battery Cycler</h3>
+                <p>A senior graduate project focused on building a cost-effective, programmable lithium battery charger for EV applications. This prototype includes an EasyEDA-designed CCCV circuit, a MATLAB Simulink model, Arduino firmware, and Python-based data analysis tools. Key features include adjustable charging profiles and SoC/SoH estimation for 1A–30A.</p>
+                <h4> Tasks</h4>
+                <li>Circuit Design and Prototyping using EasyEDA</li>
+                <li>Control System Development with MATLAB Simulink</li>
+                <li>Firmware Development for Arduino</li>
+                <li>Data Analysis and Visualization with Python</li>
+                <li>Documentation and Reporting</li>
+                <p>Below is a PDF of the project report: <a href="assets/pdfs/Programmable CCCV EV Battery Cycler .pdf" target="_blank">Programmable CCCV EV Battery Cycler .pdf</a></p>
+            </ul>
+            <ul>
+                <h3>HVAC Design for Office Building (ME 183)</h3>
+                <p>Designed an HVAC system for an office building using Trace 700, including zoning, space and thermal load analysis, and ASHRAE compliance. This project was submitted as part of ME 183 coursework.</p>
+                <h4>Tasks</h4>
+                <li>HVAC System Design</li>
+                <li>Zoning and Space Load Analysisusing Trace 700</li>
+                <li>Thermal Load Calculations</li>
+                <li>Duct Sizing and Layout Design using Revit</li>
+                <p>Below is a PDF of the project report: <a href="assets/pdfs/Mechanical HVAC Plan.pdf" target="_blank">HVAC Design Project.pdf</a></p>
+            </ul>
+            <ul>
+                <h3>Squirrel Repellent System (ME106)</h3>
+                <p>A mechatronics project that uses PIR sensors, servos, and light-based logic to deter animals. The system is built using Arduino and 3D-printed parts.</p>
+                <h4>Tasks</h4>
+                <li>System Design and Prototyping</li>
+                <li>Arduino Programming for Sensor and Actuator Control</li>
+                <li>3D Printing of Custom Parts</li>
+                <li>Testing and Validation</li>
+                <p>Below is a PDF of the project report: <a href="assets/pdfs/Squirrel Repellent.pdf" target="_blank">Squirrel Repellent.pdf</a></p>
+            </ul>
+            <ul>
+                <h3>Solar-Assisted Vertical Axis Wind Turbine (SAVAWT)</h3>
+                <p>Designed a hybrid renewable generator that integrates solar and wind energy sources. The system is monitored using Arduino and power tracking sensors.</p>
+                <h4>Tasks</h4>
+                <li>System Design and Integration</li>
+                <li>Arduino Programming for Monitoring and Control</li>
+                <li>Power Tracking and Data Analysis</li>
+                <li>Performance Testing</li>
+                <li>Circuit Design and Implementation</li>
+                <p>Below is a PDF of the project report: <a href="assets/pdfs/Solar Assisted Vertical Wind Turbine (SAVAWT).pdf" target="_blank">Solar Assisted Vertical Wind Turbine (SAVAWT).pdf</a></p>
+            </ul>
+            <ul>
+                <h3>Vertical Self-Balancing Pendulum</h3>
+                <p>Modeled and controlled an inverted pendulum using feedback control techniques. The project       demonstrates advanced dynamics and control theory using Simulink and Arduino.</p>
+                <h4>Tasks</h4>
+                <li>System Modeling and Simulation using Simulink</li>
+                <li>Control System Design and Implementation</li>    
+                <li>Arduino Programming for Control</li>
+                <li>Testing and Validation</li>
+                <p>Below is a PDF of the project report: <a href="assets/pdfs/Vertical Self Balancing Pendulem.pdf" target="_blank">Vertical Self Balancing Pendulem.pdf</a></p>
+            </ul>
+          
+            <h3>All PDFs</h3>
+            <ul>
+                <li><a href="assets/pdfs/Programmable CCCV EV Battery Cycler .pdf" target="_blank">Programmable CCCV EV Battery Cycler .pdf</a></li>
+                <li><a href="assets/pdfs/Mechanical HVAC Plan.pdf" target="_blank">Mechanical HVAC Plan.pdf</a></li>
+                <li><a href="assets/pdfs/Squirrel Repellent.pdf" target="_blank">Squirrel Repellent.pdf</a></li>
+                <li><a href="assets/pdfs/Solar Assisted Vertical Wind Turbine (SAVAWT).pdf" target="_blank">Solar Assisted Vertical Wind Turbine (SAVAWT).pdf</a></li>
+                <li><a href="assets/pdfs/Vertical Self Balancing Pendulem.pdf" target="_blank">Vertical Self Balancing Pendulem.pdf</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        themeToggle.addEventListener('change', () => {
+            html.classList.toggle('dark-theme');
+        });
+
+        function showTab(tabName) {
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.style.display = tab.id === tabName ? 'block' : 'none';
+            });
+        }
+    </script>
 </body>
 </html>
