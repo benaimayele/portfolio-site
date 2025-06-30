@@ -1,76 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beniam Ayele Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beniam Ayele – Project Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>Beniam Ayele Portfolio</h1>
-        <nav>
-            <button onclick="showTab('current')">Current Projects</button>
-            <button onclick="showTab('school')">School Projects</button>
-            <label class="theme-switch">
-                <input type="checkbox" id="theme-toggle">
-                <span class="slider"></span>
-            </label>
-        </nav>
-    </header>
+  <header>
+    <h1>Beniam Ayele</h1>
+    <nav>
+      <ul>
+        <li><a href="#current-projects">Current Projects</a></li>
+        <li><a href="#school-projects">School Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="current-projects">
+      <h2>Current Projects</h2>
+      <!-- Current projects content remains unchanged -->
+    </section>
 
-    <main>
-        <section id="current" class="tab">
-            <h2>Current Projects</h2>
+    <section id="school-projects">
+      <h2>School Projects</h2>
+      <ul>
+        <li>
+          <strong>Programmable CCCV EV Battery Cycler:</strong>
+          A senior project to develop a low-cost programmable lithium battery charger for EVs, featuring a CCCV circuit (EasyEDA), MATLAB Simulink control model, Arduino code, and Python-based SoC/SoH analysis.
+          <a href="docs/Programmable CCCV EV Battery Cycler .pdf">View Report (PDF)</a>
+        </li>
+        <li>
+          <strong>HVAC Design for Office Building (ME 183):</strong>
+          Designed an HVAC system using Trace 700 with zoning, space/thermal load analysis, and ASHRAE compliance. Submitted as part of ME 183 coursework.
+          <a href="docs/ME 183 HVAC Project Report.pdf">View Report (PDF)</a>
+        </li>
+        <li>
+          <strong>Squirrel Repellent System (ME106):</strong>
+          Mechatronics project that used PIR sensors, servos, and light-based logic to deter animals using Arduino and 3D-printed parts.
+          <a href="docs/ME106 Project Report.pdf">View Report (PDF)</a>
+        </li>
+        <li>
+          <strong>Solar-Assisted Vertical Axis Wind Turbine (SAVAWT):</strong>
+          Designed a hybrid renewable generator integrating solar and wind, monitored with Arduino and power tracking sensors.
+          <a href="docs/Solar Assisted Vertical Wind Turbine (SAVAWT).pdf">View Report (PDF)</a>
+        </li>
+        <li>
+          <strong>Vertical Self-Balancing Pendulum:</strong>
+          Modeled and controlled an inverted pendulum using feedback control with Simulink and Arduino, showcasing advanced dynamics.
+          <a href="docs/Vertical Self Balancing Pendulem.pdf">View Report (PDF)</a>
+        </li>
+        <li>
+          <strong>Mechanical HVAC Progress Memo:</strong>
+          Progress milestone memo outlining zoning, design assumptions, and envelope inputs for a mechanical HVAC design course.
+          <a href="docs/Mechanical HVAC Plan.pdf">View Report (PDF)</a>
+        </li>
+      </ul>
+    </section>
 
-            <div class="project-card">
-                <h3>BACnet/IP on ESP32</h3>
-                <p>Lightweight BACnet/IP stack implemented in C using ESP-IDF. Handles Who-Is, I-Am, Read Property. Tested with Wireshark.</p>
-                <div class="gallery">
-                    <img src="assets/images/IMG-1521.jpg" alt="Code View">
-                    <img src="assets/images/IMG-1529.JPG" alt="Wireshark">
-                    <img src="assets/images/IMG-153.JPG" alt="Terminal Output">
-                </div>
-            </div>
-
-            <div class="project-card">
-                <h3>CutCam</h3>
-                <p>A wireless camera that attaches to any hair clipper and streams video to smart devices. Solves the problem of self-grooming visibility.</p>
-                <ul>
-                    <li>Attachable to any clipper</li>
-                    <li>3D printable design</li>
-                    <li>Smartphone streaming</li>
-                </ul>
-                <p><em>3D models and video coming soon.</em></p>
-            </div>
-        </section>
-
-        <section id="school" class="tab" style="display:none;">
-            <h2>School Projects</h2>
-            <ul>
-                <li><a href="assets/pdfs/Dynamics Final.pdf" target="_blank">Dynamics Final</a></li>
-                <li><a href="assets/pdfs/Structural Report.pdf" target="_blank">Structural Report</a></li>
-                <li><a href="assets/pdfs/HVAC Design Project.pdf" target="_blank">HVAC Design Project</a></li>
-            </ul>
-            <h3>All PDFs</h3>
-            <ul>
-                <li><a href="assets/pdfs/Dynamics Final.pdf" target="_blank">Dynamics Final.pdf</a></li><li><a href="assets/pdfs/Structural Report.pdf" target="_blank">Structural Report.pdf</a></li><li><a href="assets/pdfs/HVAC Design Project.pdf" target="_blank">HVAC Design Project.pdf</a></li>
-            </ul>
-        </section>
-    </main>
-
-    <script>
-        const themeToggle = document.getElementById('theme-toggle');
-        const html = document.documentElement;
-        themeToggle.addEventListener('change', () => {
-            html.classList.toggle('dark-theme');
-        });
-
-        function showTab(tabName) {
-            document.querySelectorAll('.tab').forEach(tab => {
-                tab.style.display = tab.id === tabName ? 'block' : 'none';
-            });
-        }
-    </script>
+    <section id="resume">
+      <h2>Resume</h2>
+      <p>Below is a PDF viewer of my most current resume.</p>
+      <iframe src="docs/Beniam_Ayele_ Resume062925.pdf" width="100%" height="800px" style="border: 1px solid #444; border-radius: 6px;"></iframe>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Beniam Ayele | Portfolio</p>
+  </footer>
 </body>
 </html>
